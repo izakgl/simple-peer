@@ -667,7 +667,7 @@ Peer.prototype.getStats = function (cb) {
 
   // Two-parameter callback-based getStats() (deprecated, former standard)
   } else if (self._isReactNativeWebrtc) {
-    self._pc.getStats(null, function (res) {
+    self._pc.getStats(null).then(function (res) {
       var reports = []
       res.forEach(function (report) {
         reports.push(flattenValues(report))
